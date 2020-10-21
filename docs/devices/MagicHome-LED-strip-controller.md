@@ -69,17 +69,17 @@ Due to variants, you can configure:
 If you have a variant with an IR Remote (as per the opening picture), you can use the new `rule` command to make the remote buttons change the light levels. For example, this rule allows me to turn it on and off, change the brightness, and turn it on to full white:
 
 ```
-rule1 on IrReceived#Data=0xFFF807 do power OFF endon on IrReceived#Data=0xFFB04F do WAKEUP endon on IrReceived#Data=0xFF906F do dimmer + endon on IrReceived#Data=0xFFB847 do dimmer - endon on IrReceived#Data=0xFFA857 do color #000000ff endon
+rule1 on IrReceived#Data=0x00FFF807 do power OFF endon on IrReceived#Data=0x00FFB04F do WAKEUP endon on IrReceived#Data=0x00FF906F do dimmer + endon on IrReceived#Data=0x00FFB847 do dimmer - endon on IrReceived#Data=0x00FFA857 do color #000000ff endon
 ```
 
 ### Full Set of rules for IR remote
 Each rule can only be 511 characters long, some of the colors below use the built in predefined shortcut color numbers.
 ```
-rule1 on IrReceived#Data=0xFFF807 do power OFF endon on IrReceived#Data=0xFFB04F do WAKEUP endon on IrReceived#Data=0xFF906F do dimmer + endon on IrReceived#Data=0xFFB847 do dimmer - endon on IrReceived#Data=0xFFA857 do color 12 endon on IrReceived#Data=0xFF9867 do color 1 endon on IrReceived#Data=0xFFD827 do color 2 endon on IrReceived#Data=0xFF8877 do color 3 endon on IrReceived#Data=0xFF28D7 do color  #007FFF endon  on IrReceived#Data=0xFF38C7 do color 4 endon
+rule1 on IrReceived#Data=0x00FFF807 do power OFF endon on IrReceived#Data=0x00FFB04F do WAKEUP endon on IrReceived#Data=0x00FF906F do dimmer + endon on IrReceived#Data=0x00FFB847 do dimmer - endon on IrReceived#Data=0x00FFA857 do color 12 endon on IrReceived#Data=0x00FF9867 do color 1 endon on IrReceived#Data=0x00FFD827 do color 2 endon on IrReceived#Data=0x00FF8877 do color 3 endon on IrReceived#Data=0x00FF28D7 do color  #007FFF endon  on IrReceived#Data=0x00FF38C7 do color 4 endon
 
-rule2 on IrReceived#Data=0xFFE817 do color #FF3F00 endon on IrReceived#Data=0xFF48B7 do color #00FF3F endon on IrReceived#Data=0xFF6897 do color #3F00FF endon on IrReceived#Data=0xFF02FD do color 4 endon on IrReceived#Data=0xFF32CD do color #00FFBF endon on IrReceived#Data=0xFF20DF do color #7F00FF endon on IrReceived#Data=0xFF50AF do color #FF7F00 endon on IrReceived#Data=0xFF7887 do color #00BFFF endon on IrReceived#Data=0xFF708F do color #FF00FF endon on IrReceived#Data=0xFFF00F do color #FF003F endon
+rule2 on IrReceived#Data=0x00FFE817 do color #FF3F00 endon on IrReceived#Data=0x00FF48B7 do color #00FF3F endon on IrReceived#Data=0x00FF6897 do color #3F00FF endon on IrReceived#Data=0x00FF02FD do color 4 endon on IrReceived#Data=0x00FF32CD do color #00FFBF endon on IrReceived#Data=0x00FF20DF do color #7F00FF endon on IrReceived#Data=0x00FF50AF do color #FF7F00 endon on IrReceived#Data=0x00FF7887 do color #00BFFF endon on IrReceived#Data=0x00FF708F do color #FF00FF endon on IrReceived#Data=0x00FFF00F do color #FF003F endon
 
-rule3 on IrReceived#Data=0xFF00FF do scheme 4 endon on IrReceived#Data=0xFF58A7 do scheme 3 endon on IrReceived#Data=0xFF30CF do scheme 2 endon on IrReceived#Data=0xFFB24D do backlog BlinkCount 600; Power 3 endon
+rule3 on IrReceived#Data=0x00FF00FF do scheme 4 endon on IrReceived#Data=0x00FF58A7 do scheme 3 endon on IrReceived#Data=0x00FF30CF do scheme 2 endon on IrReceived#Data=0x00FFB24D do backlog BlinkCount 600; Power 3 endon
 ```
 After setting the rules you need to activate them with the following:
 ```
